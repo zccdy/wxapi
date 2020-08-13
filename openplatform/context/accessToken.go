@@ -138,13 +138,19 @@ func (ctx *Context) QueryAuthCode(authCode string) (*AuthBaseInfo, error) {
 	if err != nil {
 		return nil, err
 	}
-
+	//{"errcode":61009,"errmsg":"code is invalid rid: 5f34ffda-15f5225d-519bc4eb"}
 	var ret struct {
+		Code  int		   `json:"errcode"`
+		ErrMsg string      `json:"errmsg"`
 		Info *AuthBaseInfo `json:"authorization_info"`
 	}
 
 	if err := json.Unmarshal(body, &ret); err != nil {
 		return nil, err
+	}
+
+	if ret.Info==nil&&ret.ErrMsg!="" {
+		return nil,fmt.Errorf("ErrCode=%d ErrMsg=%s",ret.Code,ret.ErrMsg)
 	}
 
 	return ret.Info, nil
