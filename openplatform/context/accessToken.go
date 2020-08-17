@@ -222,11 +222,11 @@ type AuthorizerInfo struct {
 	UserName        string `json:"user_name"`
 	PrincipalName   string `json:"principal_name"`
 	BusinessInfo    struct {
-		OpenStore string `json:"open_store"`
-		OpenScan  string `json:"open_scan"`
-		OpenPay   string `json:"open_pay"`
-		OpenCard  string `json:"open_card"`
-		OpenShake string `json:"open_shake"`
+		OpenStore int `json:"open_store"`
+		OpenScan  int `json:"open_scan"`
+		OpenPay   int `json:"open_pay"`
+		OpenCard  int `json:"open_card"`
+		OpenShake int `json:"open_shake"`
 	}  `json:"business_info"`
 	Alias     string `json:"alias"`
 	QrcodeURL string `json:"qrcode_url"`
