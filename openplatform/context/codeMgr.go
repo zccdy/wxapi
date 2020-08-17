@@ -79,7 +79,7 @@ func (ctx *Context) CommitMiniProgramCode(param *CommitMiniProgramCodeParam,mini
         Code  int		   `json:"errcode"`
         ErrMsg string      `json:"errmsg"`
     }
-
+    fmt.Println("CommitMiniProgramCode resBody=",string(body))
     if err := json.Unmarshal(body, &ret); err != nil {
         return err
     }
@@ -113,7 +113,7 @@ func (ctx *Context) CommitMiniProgram2Review(accessToken string) (string, error)
         ErrMsg string      `json:"errmsg"`
         AuditId string     `json:"auditid"`
     }
-
+    fmt.Println("CommitMiniProgram2Review resBody=",string(body))
     if err := json.Unmarshal(body, &ret); err != nil {
         return "",err
     }
@@ -142,7 +142,7 @@ func (ctx *Context) getMiniProgramLastAuditStatus(accessToken string) (*LastAudi
     }
 
     var ret LastAuditStatus
-
+    fmt.Println("getMiniProgramLastAuditStatus resBody=",string(body))
     if err := json.Unmarshal(body, &ret); err != nil {
         return nil,err
     }
@@ -172,7 +172,7 @@ func (ctx *Context) MiniProgramRelease(accessToken string) error{
         Code  int		   `json:"errcode"`
         ErrMsg string      `json:"errmsg"`
     }
-
+    fmt.Println("MiniProgramRelease resBody=",string(body))
     if err := json.Unmarshal(body, &ret); err != nil {
         return err
     }
