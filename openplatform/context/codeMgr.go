@@ -14,6 +14,7 @@ const (
 )
 
 
+
 /*
 {
     "extEnable": true,
@@ -152,8 +153,6 @@ func (ctx *Context) getMiniProgramLastAuditStatus(accessToken string) (*LastAudi
     return &ret,nil
 
 }
-
-
 
 
 //小程序发布 https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Mini_Programs/code/release.html
