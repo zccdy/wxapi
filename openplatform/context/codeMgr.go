@@ -74,6 +74,16 @@ func (ctx *Context) CommitMiniProgramCode(param *CommitMiniProgramCodeParam,mini
         param.ExtJson=fmt.Sprintf("{\"extEnable\": false, \"extAppid\": %s,}",miniAppId)
     }
     url := fmt.Sprintf(commitCodeURL, param.AccessToken)
+    var CodeParam struct {
+        TemplateId  string  `json:"template_id"`     //代码库中的代码模板 ID
+        ExtJson     string  `json:"ext_json"`        //第三方自定义的配置
+        Version     string  `json:"user_version"`    //代码版本号，开发者可自定义（长度不要超过 64 个字符）
+        Desc        string  `json:"user_desc"`       //代码描述，开发者可自定义
+    }
+    CodeParam.TemplateId=param.TemplateId
+    CodeParam.ExtJson=param.ExtJson
+    CodeParam.Version=param.Version
+    CodeParam.Desc=param.Desc
     body, err := util.PostJSON(url, param)
     if err != nil {
         return err
