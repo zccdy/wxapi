@@ -71,7 +71,7 @@ type CommitMiniProgramCodeParam struct {
 // 上传代码 https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Mini_Programs/code/commit.html
 func (ctx *Context) CommitMiniProgramCode(param *CommitMiniProgramCodeParam,miniAppId string) error {
     if param.ExtJson=="" {
-        param.ExtJson=fmt.Sprintf("{\"extEnable\": false, \"extAppid\": %s,}",miniAppId)
+        param.ExtJson=fmt.Sprintf("{\"extEnable\": false, \"extAppid\": %s}",miniAppId)
     }
     url := fmt.Sprintf(commitCodeURL, param.AccessToken)
     var CodeParam struct {
