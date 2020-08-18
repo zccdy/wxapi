@@ -62,7 +62,7 @@ const (
 */
 type CommitMiniProgramCodeParam struct {
     AccessToken string  `json:"access_token"`    //小程序接口调用令牌
-    TemplateId  string  `json:"template_id"`     //代码库中的代码模板 ID
+    TemplateId  int  `json:"template_id"`     //代码库中的代码模板 ID
     ExtJson     string  `json:"ext_json"`        //第三方自定义的配置
     Version     string  `json:"user_version"`    //代码版本号，开发者可自定义（长度不要超过 64 个字符）
     Desc        string  `json:"user_desc"`       //代码描述，开发者可自定义
