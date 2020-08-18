@@ -3,6 +3,9 @@ import (
     "encoding/json"
     "fmt"
     "github.com/zccdy/wxapi/util"
+    "io/ioutil"
+    "net/http"
+    "net/url"
 )
 
 
@@ -11,6 +14,7 @@ const (
     submitReviewURL = "https://api.weixin.qq.com/wxa/submit_audit?access_token=%s"
     getLastAuditStatusURL = "https://api.weixin.qq.com/wxa/get_latest_auditstatus?access_token=%s"
     miniReleaseURL = "https://api.weixin.qq.com/wxa/release?access_token=%s"
+    tyQRCodeURL = "https://api.weixin.qq.com/wxa/get_qrcode?access_token=%s"
 )
 
 
@@ -181,4 +185,32 @@ func (ctx *Context) MiniProgramRelease(accessToken string) error{
         return  fmt.Errorf("ErrCode=%d ErrMsg=%s",ret.Code,ret.ErrMsg)
     }
     return nil
+}
+
+//获取体验二维码 https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Mini_Programs/code/get_qrcode.html
+func (ctx *Context) GetTYQRCode (accessToken string,path string) ([]byte,error){
+    u := fmt.Sprintf(tyQRCodeURL,accessToken )
+    if path!="" {
+        path=url.QueryEscape(path)
+        u=u+"&path="+path
+    }
+    response, err := http.Get(u)
+    if err != nil {
+        return nil, err
+    }
+
+    defer response.Body.Close()
+    if response.StatusCode != http.StatusOK {
+        return nil, fmt.Errorf("GetTYQRCode error : uri=%v , statusCode=%v", u, response.StatusCode)
+    }
+    body,e:=ioutil.ReadAll(response.Body)
+    if e!=nil {
+        return nil, e
+    }
+
+    ct:=response.Header.Get("Content-Type")
+    fmt.Println("Content-Type=",ct)
+
+    return body,nil
+
 }
