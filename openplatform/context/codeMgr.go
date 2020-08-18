@@ -84,7 +84,7 @@ func (ctx *Context) CommitMiniProgramCode(param *CommitMiniProgramCodeParam,mini
     CodeParam.ExtJson=param.ExtJson
     CodeParam.Version=param.Version
     CodeParam.Desc=param.Desc
-    body, err := util.PostJSON(url, param)
+    body, err := util.PostJSON(url, &CodeParam)
     if err != nil {
         return err
     }
