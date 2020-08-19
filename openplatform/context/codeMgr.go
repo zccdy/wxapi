@@ -216,8 +216,16 @@ func (ctx *Context) GetTYQRCode (accessToken string,path string) ([]byte,error){
     }
 
     ct:=response.Header.Get("Content-Type")
-    fmt.Println("Content-Type=",ct)
+    if ct == "image/jpeg" {
+        return body,nil
+    }
 
-    return body,nil
-
+    var ret struct {
+        Code  int		   `json:"errcode"`
+        ErrMsg string      `json:"errmsg"`
+    }
+    if err := json.Unmarshal(body, &ret); err != nil {
+        return nil,err
+    }
+    return nil, fmt.Errorf("ErrCode=%d ErrMsg=%s",ret.Code,ret.ErrMsg)
 }
