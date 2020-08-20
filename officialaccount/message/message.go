@@ -69,6 +69,14 @@ const (
 	EventTemplateSendJobFinish = "TEMPLATESENDJOBFINISH"
 	//EventWxaMediaCheck 异步校验图片/音频是否含有违法违规内容推送事件
 	EventWxaMediaCheck = "wxa_media_check"
+
+	//代码审核
+	//EventAuditSuccess 审核通过
+	EventAuditSuccess = "weapp_audit_success"
+	//EventAuditFail 审核不通过
+	EventAuditFail = "weapp_audit_fail"
+	//EventAuditDelay 审核延后
+	EventAuditDelay= "weapp_audit_delay"
 )
 
 const (
@@ -115,6 +123,9 @@ type MixMessage struct {
 	MenuID      string    `xml:"MenuId"`
 	Status      string    `xml:"Status"`
 	SessionFrom string    `xml:"SessionFrom"`
+	SuccTime 	string    `xml:"SuccTime"`
+	FailTime 	string    `xml:"FailTime"`
+	Reason		string    `xml:"Reason"`
 
 	ScanCodeInfo struct {
 		ScanType   string `xml:"ScanType"`

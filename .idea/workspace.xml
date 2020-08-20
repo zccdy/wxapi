@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="375ffc2a-0385-4aa8-b333-f966eda8ba5f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officialaccount/message/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/officialaccount/message/message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officialaccount/server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/officialaccount/server/server.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +24,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/openplatform/context/codeMgr.go">
+        <entry file="file://$PROJECT_DIR$/officialaccount/message/message.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2441">
-              <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+            <state relative-caret-position="547">
+              <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -112,6 +114,15 @@
     <findStrings>
       <find>https://api.weixin.qq.com/wxa/commit?access_token</find>
       <find>RegisterMiniProgramParam</find>
+      <find>FromUserName</find>
+      <find>ScreenShot</find>
+      <find>CommonToken</find>
+      <find>FailTime</find>
+      <find>SuccTime</find>
+      <find>Reason</find>
+      <find>weapp_audit_success</find>
+      <find>SkipValidate</find>
+      <find>EventType</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="C:\Go" />
@@ -128,6 +139,8 @@
         <option value="$PROJECT_DIR$/openplatform/context/accessToken.go" />
         <option value="$PROJECT_DIR$/util/http.go" />
         <option value="$PROJECT_DIR$/openplatform/context/codeMgr.go" />
+        <option value="$PROJECT_DIR$/officialaccount/server/server.go" />
+        <option value="$PROJECT_DIR$/officialaccount/message/message.go" />
       </list>
     </option>
   </component>
@@ -161,7 +174,13 @@
             <path>
               <item name="wxapi" type="b2602c69:ProjectViewProjectNode" />
               <item name="wxapi" type="462c0819:PsiDirectoryNode" />
-              <item name="miniprogram" type="462c0819:PsiDirectoryNode" />
+              <item name="officialaccount" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wxapi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxapi" type="462c0819:PsiDirectoryNode" />
+              <item name="officialaccount" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wxapi" type="b2602c69:ProjectViewProjectNode" />
@@ -210,6 +229,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -310,13 +330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openplatform/miniprogram/basic/basic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/miniprogram/qrcode/qrcode.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
@@ -374,8 +387,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/openplatform/context/codeMgr.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2441">
-          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        <state relative-caret-position="533">
+          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openplatform/miniprogram/basic/basic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officialaccount/server/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="e#16#255#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officialaccount/message/message.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="4" />
         </state>
       </provider>
     </entry>
