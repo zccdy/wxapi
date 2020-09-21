@@ -51,12 +51,14 @@ type resTemplateSend struct {
 }
 
 //Send 发送模板消息
-func (tpl *Template) Send(msg *TemplateMessage) (msgID int64, err error) {
+func (tpl *Template) Send(msg *TemplateMessage,accessToken string) (msgID int64, err error) {
+	/*
 	var accessToken string
 	accessToken, err = tpl.GetAccessToken()
 	if err != nil {
 		return
 	}
+	 */
 	uri := fmt.Sprintf("%s?access_token=%s", templateSendURL, accessToken)
 	response, err := util.PostJSON(uri, msg)
 

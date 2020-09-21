@@ -90,7 +90,7 @@ func (ctx *Context) GetPreCode() (string, error) {
 	var ret struct {
 		PreCode string `json:"pre_auth_code"`
 	}
-	fmt.Println("------->respBody=",string(body))
+	//fmt.Println("------->GetPreCode respBody=",string(body))
 	if err := json.Unmarshal(body, &ret); err != nil {
 		return "", err
 	}

@@ -53,7 +53,7 @@ func (srv *Server) SkipValidate(skip bool) {
 //Serve 处理微信的请求消息
 func (srv *Server) Serve() error {
 	if !srv.Validate() {
-		fmt.Println("Validate Signature Failed.")
+		//fmt.Println("Validate Signature Failed.")
 		return fmt.Errorf("请求校验失败")
 	}
 
@@ -69,7 +69,7 @@ func (srv *Server) Serve() error {
 	}
 
 	//debug print request msg
-	//fmt.Print("request msg =%s", string(srv.RequestRawXMLMsg))
+	fmt.Print("request msg =%s", string(srv.RequestRawXMLMsg))
 
 	return srv.buildResponse(response)
 }
