@@ -42,7 +42,7 @@ const (
 
 const (
 	//EventSubscribe 订阅
-	EventSubscribe EventType = "subscribe"
+	EventSubscribe  = "subscribe"
 	//EventUnsubscribe 取消订阅
 	EventUnsubscribe = "unsubscribe"
 	//EventScan 用户已经关注公众号，则微信会将带场景值扫描事件推送给开发者
