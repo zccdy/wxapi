@@ -48,6 +48,7 @@ func (ctx *Context) GetComponentAccessTokenStruct() (ComponentAccessToken, error
 
 // SetComponentAccessToken 通过component_verify_ticket 获取 ComponentAccessToken
 func (ctx *Context) SetComponentAccessToken(verifyTicket string) (*ComponentAccessToken, error) {
+	fmt.Println("---SetComponentAccessToken verifyTicket=",verifyTicket)
 	body := map[string]string{
 		"component_appid":         ctx.AppID,
 		"component_appsecret":     ctx.AppSecret,
@@ -59,7 +60,7 @@ func (ctx *Context) SetComponentAccessToken(verifyTicket string) (*ComponentAcce
 	}
 
 	at := &ComponentAccessToken{}
-	//fmt.Println("------->respBody=",string(respBody))
+	fmt.Println("------->SetComponentAccessToken respBody=",string(respBody))
 	if err := json.Unmarshal(respBody, at); err != nil {
 		return nil, err
 	}
