@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="375ffc2a-0385-4aa8-b333-f966eda8ba5f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/crypto.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/crypto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/openplatform/context/accessToken.go" beforeDir="false" afterPath="$PROJECT_DIR$/openplatform/context/accessToken.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +53,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/officialaccount/context/context.go">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -65,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/openplatform/context/accessToken.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+            <state relative-caret-position="390">
+              <caret line="250" column="48" selection-start-line="250" selection-start-column="48" selection-end-line="250" selection-end-column="48" />
               <folding>
                 <element signature="e#17#91#0" expanded="true" />
               </folding>
@@ -77,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/crypto.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="101" column="88" selection-start-line="101" selection-start-column="88" selection-end-line="101" selection-end-column="88" />
+            <state relative-caret-position="511">
+              <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -130,8 +134,8 @@
         <option value="$PROJECT_DIR$/officialaccount/message/template.go" />
         <option value="$PROJECT_DIR$/officialaccount/message/customer_message.go" />
         <option value="$PROJECT_DIR$/officialaccount/message/message.go" />
-        <option value="$PROJECT_DIR$/openplatform/context/accessToken.go" />
         <option value="$PROJECT_DIR$/util/crypto.go" />
+        <option value="$PROJECT_DIR$/openplatform/context/accessToken.go" />
       </list>
     </option>
   </component>
@@ -155,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,6 +187,12 @@
               <item name="wxapi" type="b2602c69:ProjectViewProjectNode" />
               <item name="wxapi" type="462c0819:PsiDirectoryNode" />
               <item name="officialaccount" type="462c0819:PsiDirectoryNode" />
+              <item name="context" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wxapi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wxapi" type="462c0819:PsiDirectoryNode" />
+              <item name="officialaccount" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -199,7 +210,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,7 +249,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27132195" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2739872" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -457,9 +467,6 @@
     <entry file="file://$PROJECT_DIR$/officialaccount/message/voice.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/officialaccount/context/context.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/miniprogram/context/context.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -467,20 +474,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/openplatform/context/accessToken.go">
+    <entry file="file://$PROJECT_DIR$/util/crypto.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="53" column="40" lean-forward="true" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-          <folding>
-            <element signature="e#17#91#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="511">
+          <caret line="108" column="29" selection-start-line="108" selection-start-column="29" selection-end-line="108" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/crypto.go">
+    <entry file="file://$PROJECT_DIR$/officialaccount/context/context.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="101" column="88" selection-start-line="101" selection-start-column="88" selection-end-line="101" selection-end-column="88" />
+        <state relative-caret-position="198">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openplatform/context/accessToken.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="250" column="48" selection-start-line="250" selection-start-column="48" selection-end-line="250" selection-end-column="48" />
+          <folding>
+            <element signature="e#17#91#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

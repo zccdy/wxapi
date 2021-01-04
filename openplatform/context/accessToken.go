@@ -248,6 +248,7 @@ func (ctx *Context) GetAuthrInfo(appid string) (*AuthorizerInfo, *AuthBaseInfo, 
 
 	uri := fmt.Sprintf(getComponentInfoURL, cat)
 	body, err := util.PostJSON(uri, req)
+	fmt.Println("GetAuthrInfo body=",string(body))
 	if err != nil {
 		return nil, nil, err
 	}
