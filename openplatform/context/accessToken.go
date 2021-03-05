@@ -37,9 +37,9 @@ func (ctx *Context) GetComponentAccessToken() (string, error) {
 
 // GetComponentAccessTokenStruct 获取 struct
 func (ctx *Context) GetComponentAccessTokenStruct() (ComponentAccessToken, error) {
-	accessTokenCacheKey := fmt.Sprintf("component_access_token_%s", ctx.AppID)
+	//accessTokenCacheKey := fmt.Sprintf("component_access_token_%s", ctx.AppID)
 	cat:=ComponentAccessToken{}
-	if err:= ctx.Cache.GetAndUnmarshal(accessTokenCacheKey,&cat);err!=nil{
+	if err:= ctx.Cache.GetAndUnmarshal(ctx.ComponentAKKey,&cat);err!=nil{
 		return cat, err
 	}
 
@@ -65,9 +65,9 @@ func (ctx *Context) SetComponentAccessToken(verifyTicket string) (*ComponentAcce
 		return nil, err
 	}
 	at.StoreAt=time.Now().Unix()
-	accessTokenCacheKey := fmt.Sprintf("component_access_token_%s", ctx.AppID)
+	//accessTokenCacheKey := fmt.Sprintf("component_access_token_%s", ctx.AppID)
 	expires := at.ExpiresIn
-	if err := ctx.Cache.Set(accessTokenCacheKey, at, time.Duration(expires)*time.Second); err != nil {
+	if err := ctx.Cache.Set(ctx.ComponentAKKey, at, time.Duration(expires)*time.Second); err != nil {
 		return nil, nil
 	}
 	return at, nil
