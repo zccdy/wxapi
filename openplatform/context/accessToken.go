@@ -47,7 +47,7 @@ func (ctx *Context) GetComponentAccessTokenStruct() (ComponentAccessToken, error
 }
 
 // SetComponentAccessToken 通过component_verify_ticket 获取 ComponentAccessToken
-func (ctx *Context) SetComponentAccessToken(verifyTicket string) (*ComponentAccessToken, error) {
+func (ctx *Context) SetComponentAccessToken(verifyTicket string) (at *ComponentAccessToken, e error) {
 	fmt.Println("---SetComponentAccessToken verifyTicket=",verifyTicket)
 	body := map[string]string{
 		"component_appid":         ctx.AppID,
@@ -59,18 +59,20 @@ func (ctx *Context) SetComponentAccessToken(verifyTicket string) (*ComponentAcce
 		return nil, err
 	}
 
-	at := &ComponentAccessToken{}
+	at = &ComponentAccessToken{}
 	fmt.Println("------->SetComponentAccessToken respBody=",string(respBody))
 	if err := json.Unmarshal(respBody, at); err != nil {
-		return nil, err
+		e=err
+		return
 	}
 	at.StoreAt=time.Now().Unix()
 	//accessTokenCacheKey := fmt.Sprintf("component_access_token_%s", ctx.AppID)
 	expires := at.ExpiresIn
 	if err := ctx.Cache.Set(ctx.ComponentAKKey, at, time.Duration(expires)*time.Second); err != nil {
-		return nil, nil
+		e=err
+		return
 	}
-	return at, nil
+	return
 }
 
 // GetPreCode 获取预授权码
